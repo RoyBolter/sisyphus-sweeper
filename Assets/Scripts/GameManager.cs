@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
 
     private void Start() {
         //Set up Board
-        CreateBoard(3,3,width, height);
+        CreateBoard(10,10,width, height);
 
         //Set up Camera
         Camera.main.transform.position = new Vector3(width / 2f, height / 2f, -10f);
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour {
             if (!clickedOnce) {
                 Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector3Int cellPos = board.tilemap.WorldToCell(mousePos);
-                GenerateMines(cellPos.x, cellPos.y, 3,3);
+                GenerateMines(cellPos.x, cellPos.y, 0,0);
                 GenerateNumbers();
                 clickedOnce = true;
             }
